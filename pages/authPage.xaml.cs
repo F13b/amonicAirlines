@@ -16,14 +16,24 @@ using System.Windows.Shapes;
 namespace amonicAirlines
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для authPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class authPage : Page
     {
-        public MainWindow()
+
+        public authPage()
         {
             InitializeComponent();
-            mainWindowFrame.Content = new authPage();
+        }
+
+        private void exitBtn_Click(object sender, RoutedEventArgs e)
+        {   
+            
+        }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace amonicAirlines
+namespace amonicAirlines.pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для adminPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class adminPage : Page
     {
-        public MainWindow()
+        public adminPage()
         {
             InitializeComponent();
-            mainWindowFrame.Content = new authPage();
         }
     }
 }

@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="authPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,6 +66,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="authPage.xaml.cs">
+      <DependentUpon>authPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -86,6 +93,21 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="fonts\TCBI____.TTF" />
+    <Resource Include="fonts\TCB_____.TTF" />
+    <Resource Include="fonts\TCCB____.TTF" />
+    <Resource Include="fonts\TCCEB.TTF" />
+    <Resource Include="fonts\TCCM____.TTF" />
+    <Resource Include="fonts\TCMI____.TTF" />
+    <Resource Include="fonts\TCM_____.TTF" />
+    <Resource Include="fonts\TeXGyreAdventor-Bold.ttf" />
+    <Resource Include="fonts\TeXGyreAdventor-BoldItalic.ttf" />
+    <Resource Include="fonts\TeXGyreAdventor-Italic.ttf" />
+    <Resource Include="fonts\TeXGyreAdventor-Regular.ttf" />
+    <Resource Include="fonts\verdana.ttf" />
+    <Resource Include="fonts\verdanab.ttf" />
+    <Resource Include="fonts\verdanai.ttf" />
+    <Resource Include="fonts\verdanaz.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +115,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\DS2017_TP09_2_colors%404x.png" />
+    <Resource Include="img\DS2017_TP09_2_colors.png" />
+    <Resource Include="img\DS2017_TP09_2_colors_%402x.png" />
+    <Resource Include="img\DS2017_TP09_2_colors_swatches%404x1.png" />
+    <Resource Include="img\DS2017_TP09_2_colors_with_bg%402x.png" />
+    <Resource Include="img\DS2017_TP09_2_colors_with_bg%404x.png" />
+    <Resource Include="img\DS2017_TP09_2_colors_with_bg.png" />
+    <Resource Include="img\DS2017_TP09_Airplane-Amonic-Single.png" />
+    <Resource Include="img\DS2017_TP09_Airplane-Amonic.png" />
+    <Resource Include="img\DS2017_TP09_black%402x.png" />
+    <Resource Include="img\DS2017_TP09_black%404x.png" />
+    <Resource Include="img\DS2017_TP09_black.png" />
+    <Resource Include="img\DS2017_TP09_color%402x.png" />
+    <Resource Include="img\DS2017_TP09_color%404x.png" />
+    <Resource Include="img\DS2017_TP09_color.png" />
+    <Resource Include="img\DS2017_TP09_color_swatches%404x1.png" />
+    <Resource Include="img\DS2017_TP09_color_swatches.jpg" />
+    <Resource Include="img\DS2017_TP09_mono%402x.png" />
+    <Resource Include="img\DS2017_TP09_mono%404x.png" />
+    <Resource Include="img\DS2017_TP09_mono.png" />
+    <Resource Include="img\DS2017_TP09_mono_swatches%404x1.png" />
+    <Resource Include="img\white%402x.png" />
+    <Resource Include="img\white%404x.png" />
+    <Resource Include="img\white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
