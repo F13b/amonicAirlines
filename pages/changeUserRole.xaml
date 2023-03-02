@@ -53,7 +53,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="saveBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="24 8" Foreground="White" Background="#196AA6" Click="saveBtn_Click">Save</Button>
+            <Button x:Name="saveBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="24 8" Foreground="White" Background="#196AA6" Click="saveBtn_Click">Apply</Button>
             <Button x:Name="cancelBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="24 8" Foreground="White" Grid.Column="1" Background="Red" Click="cancelBtn_Click">Cancel</Button>
         </Grid>
     </Grid>
