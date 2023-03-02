@@ -8,7 +8,36 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="userPage">
 
-    <Grid>
-        
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <ToolBarTray>
+            <ToolBar>
+                <Button x:Name="exitBtn" Click="exitBtn_Click">Exit</Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="userGreeting"/>
+            <TextBlock x:Name="userAccountInfo"/>
+        </Grid>
+
+        <DataGrid x:Name="data" Margin="0 0 0 25" Grid.Row="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Width="100"/>
+                <DataGridTextColumn Header="Login time" Width="*"/>
+                <DataGridTextColumn Header="Logout time" Width="*"/>
+                <DataGridTextColumn Header="Time spent on system" Width="*"/>
+                <DataGridTextColumn Header="Unsuccessful logout reason" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

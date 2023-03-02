@@ -24,5 +24,10 @@ namespace amonicAirlines.pages
         {
             InitializeComponent();
         }
+
+        private void exitBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

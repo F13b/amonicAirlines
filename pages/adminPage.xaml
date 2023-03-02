@@ -8,7 +8,58 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="adminPage">
 
-    <Grid>
-        
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <ToolBarTray>
+            <ToolBar>
+                <Button x:Name="addUserBtn" Margin="0 0 10 0" Click="addUserBtn_Click">Add User</Button>
+                <Button x:Name="exit" Click="exit_Click">Exit</Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Office: " Margin="0 0 15 0" VerticalAlignment="Center" TextAlignment="Right"/>
+            <ComboBox x:Name="officeBox" VerticalAlignment="Center" Width="200" Grid.Column="1" HorizontalAlignment="Left" Margin="15 0 0 0" 
+                      SelectionChanged="officeBox_SelectionChanged" DisplayMemberPath="Title">
+            </ComboBox>
+        </Grid>
+
+        <DataGrid x:Name="data" Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True" IsVisibleChanged="data_IsVisibleChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Last Name" Width="*" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Age" Width="*"/>
+                <DataGridTextColumn Header="User Role" Width="*" Binding="{Binding Roles.Title}"/>
+                <DataGridTextColumn Header="Email Address" Width="*" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Office" Width="*" Binding="{Binding Offices.Title}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="3" Margin="0 20 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="changeRoleBtn" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="24 8" Width="180"
+                    Click="changeRoleBtn_Click">
+                Change Role
+            </Button>
+            <Button x:Name="enableBtn" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="24 8" Width="180"
+                    Grid.Column="1" Click="enableBtn_Click">
+                Enable/Disable Login
+            </Button>
+        </Grid>
     </Grid>
 </Page>

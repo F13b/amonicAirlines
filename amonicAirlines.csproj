@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,7 +64,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="authPage.xaml">
+    <Compile Include="Countries.cs">
+      <DependentUpon>myModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Offices.cs">
+      <DependentUpon>myModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pages\addUser.xaml.cs">
+      <DependentUpon>addUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\changeUserRole.xaml.cs">
+      <DependentUpon>changeUserRole.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Roles.cs">
+      <DependentUpon>myModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Shadowing.cs">
+      <DependentUpon>myModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>myModel.tt</DependentUpon>
+    </Compile>
+    <Page Include="pages\addUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\adminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\authPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -67,15 +110,39 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="authPage.xaml.cs">
+    <Compile Include="myModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="myModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\adminPage.xaml.cs">
+      <DependentUpon>adminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\authPage.xaml.cs">
       <DependentUpon>authPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="pages\changeUserRole.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\userPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pages\userPage.xaml.cs">
+      <DependentUpon>userPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -108,6 +175,14 @@
     <Resource Include="fonts\verdanab.ttf" />
     <Resource Include="fonts\verdanai.ttf" />
     <Resource Include="fonts\verdanaz.ttf" />
+    <EntityDeploy Include="myModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>myModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="myModel.edmx.diagram">
+      <DependentUpon>myModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,6 +216,22 @@
     <Resource Include="img\white%402x.png" />
     <Resource Include="img\white%404x.png" />
     <Resource Include="img\white.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="myModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>myModel.edmx</DependentUpon>
+      <LastGenOutput>myModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="myModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>myModel.edmx</DependentUpon>
+      <LastGenOutput>myModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
