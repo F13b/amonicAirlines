@@ -15,16 +15,16 @@ namespace amonicAirlines
     
     public partial class db : DbContext
     {
-
-        private static db _instance;
+        public static db _instance;
         public db()
             : base("name=db")
         {
         }
 
-        public static db GetInstance() 
+        public static db GetInstance()
         {
-            if (_instance == null) _instance = new db();
+            if (_instance == null) 
+                _instance = new db();
             return _instance;
         }
     

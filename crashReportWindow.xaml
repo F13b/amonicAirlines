@@ -1,0 +1,36 @@
+﻿<Window x:Class="amonicAirlines.crashReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:amonicAirlines"
+        mc:Ignorable="d"
+        Title="crashReportWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="190*"/>
+            <ColumnDefinition Width="114*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="82*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="titleTextBlock" FontSize="14" VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="1">No logout detected for your last login on 06/07/2017 at 08:32</TextBlock>
+        <TextBlock Grid.Row="1" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="16" Grid.Column="1">Reason:</TextBlock>
+        <RichTextBox Background="#FFFFFF" x:Name="errorDescriptionTextBox" Grid.Row="2" Grid.ColumnSpan="4"  Margin="22, 5, 22, 0" Grid.Column="1"></RichTextBox>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+            <RadioButton GroupName="crashType" IsChecked="True" Name="softWareCrashRadio"></RadioButton>
+            <TextBlock>Software crash</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="50, 0, 0, 0" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2">
+            <RadioButton GroupName="crashType" Name="systemCrashRadio"></RadioButton>
+            <TextBlock>System crash</TextBlock>
+        </StackPanel>
+        <Button Background="#196AA6" Grid.Column="3" Grid.Row="3" Width="100" Height="20" HorizontalAlignment="Right" x:Name="confrimBtn" Click="confrimBtn_Click">Confirm</Button>
+    </Grid>
+</Window>

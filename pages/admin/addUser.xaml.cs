@@ -51,7 +51,7 @@ namespace amonicAirlines.pages
 
             if (erros.Length > 0)
             {
-                MessageBox.Show(erros.ToString(), "Error!");
+                MessageBox.Show(erros.ToString(), "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -62,7 +62,7 @@ namespace amonicAirlines.pages
                 user.Email = email.Text;
                 user.FirstName = firstName.Text;
                 user.LastName = lastName.Text;
-                user.Birthdate = birthday.SelectedDate;
+                user.Birthdate = DateTime.Parse(birthday.Text);
 
                 Offices selectedOffice = office.SelectedItem as Offices;
 
@@ -82,7 +82,7 @@ namespace amonicAirlines.pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error!");
+                MessageBox.Show(ex.ToString(), "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -93,15 +93,16 @@ namespace amonicAirlines.pages
 
         private static string hashPassword(string password)
         {
-            MD5 md5 = MD5.Create();
-            byte[] b = Encoding.ASCII.GetBytes(password);
-            byte[] hash = md5.ComputeHash(b);
+            var md5 = MD5.Create();
+            byte[] passwordBytes = Encoding.ASCII.GetBytes(password);
+            byte[] hash = md5.ComputeHash(passwordBytes);
+            StringBuilder stringBuilder = new StringBuilder();
 
-            StringBuilder sb = new StringBuilder();
-            foreach (var a in hash)
-                sb.Append(a.ToString("X2"));
-
-            return Convert.ToString(sb);
+            foreach (var stroke in hash)
+            {
+                stringBuilder.Append(stroke.ToString("X2"));
+            }
+            return Convert.ToString(stringBuilder);
         }
     }
 }

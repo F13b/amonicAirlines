@@ -35,14 +35,21 @@
         </Grid>
 
         <DataGrid x:Name="data" Grid.Row="2" AutoGenerateColumns="False" IsReadOnly="True" IsVisibleChanged="data_IsVisibleChanged">
+            <DataGrid.RowStyle >
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Style.Setters>
+                        <Setter Property="Background" Value="{Binding code}"></Setter>
+                    </Style.Setters>
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Header="Last Name" Width="*" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="Age" Width="*"/>
-                <DataGridTextColumn Header="User Role" Width="*" Binding="{Binding Roles.Title}"/>
-                <DataGridTextColumn Header="Email Address" Width="*" Binding="{Binding Email}"/>
-                <DataGridTextColumn Header="Office" Width="*" Binding="{Binding Offices.Title}"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Last Name" Width="*" Binding="{Binding lastName}"/>
+                <DataGridTextColumn Header="Age" Width="*" Binding="{Binding age}"/>
+                <DataGridTextColumn Header="User Role" Width="*" Binding="{Binding role.Title}"/>
+                <DataGridTextColumn Header="Email Address" Width="*" Binding="{Binding email}"/>
+                <DataGridTextColumn Header="Office" Width="*" Binding="{Binding office.Title}"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -53,11 +60,11 @@
             </Grid.ColumnDefinitions>
 
             <Button x:Name="changeRoleBtn" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="24 8" Width="180"
-                    Click="changeRoleBtn_Click">
+                    Click="changeRoleBtn_Click" Background="#196AA6" Foreground="White">
                 Change Role
             </Button>
             <Button x:Name="enableBtn" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="24 8" Width="180"
-                    Grid.Column="1" Click="enableBtn_Click">
+                    Grid.Column="1" Click="enableBtn_Click" Background="#196AA6" Foreground="White">
                 Enable/Disable Login
             </Button>
         </Grid>

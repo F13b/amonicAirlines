@@ -27,12 +27,19 @@ namespace amonicAirlines
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public Nullable<int> OfficeID { get; set; }
-        public Nullable<System.DateTime> Birthdate { get; set; }
-        public Nullable<bool> Active { get; set; }
+        public System.DateTime Birthdate { get; set; }
+        public bool Active { get; set; }
     
         public virtual Offices Offices { get; set; }
         public virtual Roles Roles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Shadowing> Shadowing { get; set; }
+
+        public int getAge()
+        {
+            TimeSpan span = DateTime.Now - Birthdate;
+            int years = (new DateTime(1, 1, 1) + span).Year - 1;
+            return years;
+        }
     }
 }

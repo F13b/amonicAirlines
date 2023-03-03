@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:amonicAirlines.pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="userPage">
+      Title="userPage"
+      >
 
     <Grid Margin="15">
         <Grid.RowDefinitions>
@@ -21,22 +22,22 @@
             </ToolBar>
         </ToolBarTray>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0 15 0 15">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock x:Name="userGreeting"/>
-            <TextBlock x:Name="userAccountInfo"/>
+            <TextBlock x:Name="userAccountInfo" Grid.Row="1"/>
         </Grid>
 
-        <DataGrid x:Name="data" Margin="0 0 0 25" Grid.Row="2">
+        <DataGrid x:Name="data" Margin="0 0 0 25" Grid.Row="2" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Date" Width="100"/>
-                <DataGridTextColumn Header="Login time" Width="*"/>
-                <DataGridTextColumn Header="Logout time" Width="*"/>
-                <DataGridTextColumn Header="Time spent on system" Width="*"/>
-                <DataGridTextColumn Header="Unsuccessful logout reason" Width="*"/>
+                <DataGridTextColumn Header="Date" Width="100" Binding="{Binding dateFormated}"/>
+                <DataGridTextColumn Header="Login time" Width="*" Binding="{Binding logInFormated}"/>
+                <DataGridTextColumn Header="Logout time" Width="*" Binding="{Binding logOutFormated}"/>
+                <DataGridTextColumn Header="Time spent on system" Width="*" Binding="{Binding timeSpent}"/>
+                <DataGridTextColumn Header="Unsuccessful logout reason" Width="*" Binding="{Binding CrashReason}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
